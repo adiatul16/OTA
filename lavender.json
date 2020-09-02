@@ -1,24 +1,24 @@
 {
-  "response": [
-    {
-        "maintainer": "Aditya Ramakrishnan",
-        "oem": "Redmi",
-        "device": "Note 7",
-        "filename": "crDroidAndroid-10.0-20200901-lavender-v6.9.zip",
-        "download": "https://sourceforge.net/projects/lavenderlair/files/lavender/6.x/crDroidAndroid-10.0-20200901-lavender-v6.9.zip/download",
-        "timestamp": 1598978139,
-        "md5": "9a77257439fdda1a18531b8cec4dbefc",
-        "size": 950818012,
-        "version": "6.9",
-        "buildtype": "Monthly",
-        "forum": "",
-        "gapps": "https://opengapps.org/",
-        "firmware": "",
-        "modem": "",
-        "bootloader": "",
-        "recovery": "https://twrp.me/xiaomi/xiaomiredminote7.html",
-        "paypal": "https://www.paypal.com/paypalme/AdityaRamakrishnan",
-        "telegram": "https://t.me/Rusticoast348"
-    }
-  ]
+	"response": [
+		{
+			"maintainer": "Aditya Ramakrishnan",
+			"oem": "Redmi",
+			"device": "Note 7",
+			"filename": "crDroidAndroid-10.0-20200902-lavender-v6.9.zip",
+			"download": "https://sourceforge.net/projects/lavenderlair/files/lavender/6.x/crDroidAndroid-10.0-20200902-lavender-v6.9.zip/download",
+			"timestamp": 1599032061,
+			"md5": "171825136951fdba9bb7af0f32ea8afb",
+			"size": 950840812,
+			"version": "6.9",
+			"buildtype": "Monthly",
+			"forum": "https://forum.xda-developers.com/redmi-note-7/development/stable-crdroid-6-9-t4157471/post83415773#post83415773",
+			"gapps": "https://opengapps.org/",
+			"firmware": "",
+			"modem": "",
+			"bootloader": "",
+			"recovery": "https://twrp.me/xiaomi/xiaomiredminote7.html",
+			"paypal": "https://www.paypal.com/paypalme/AdityaRamakrishnan",
+			"telegram": "https://t.me/Rusticoast348"
+		}
+	]
 }
