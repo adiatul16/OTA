@@ -2,6 +2,14 @@ Highlights & Device Specific Changes:
 Build type: Monthly
 Device: Redmi Note 7 Lavender (lavender)
 Device maintainer: Aditya Ramakrishnan
+Firmware Version: V11.0.1.0.QFGMIXM
+ 
+=== 06-09-2020 ====
+* Fixed some smart charging overlays and nodes
+* Compiled kernel with Clang 11.0.4
+* sdm660-common: remove TARGET_USES_64_BIT_BINDER
+* sdm660-common: overlay: Set config_wifi_p2p_mac_randomization_supported 
+* Some fixes and improvements
 
 === 02-09-2020 ====
 * Upstreamed kernel to 4.4.234
