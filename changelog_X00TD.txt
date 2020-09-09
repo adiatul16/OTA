@@ -1,0 +1,22 @@
+Highlights & Device Specific Changes:
+Build type: Monthly
+Device: Asus Zenfone Max Pro M1 (X00TD)
+Device maintainer: Aditya Ramakrishnan
+Firmware Version: 063
+
+=== 09-09-2020 ===
+* Initial CrDroid 6.9 code
+* Darkonah kernel as default (4.4.233)
+* Bring back ZenParts 
+* Disable default color mode
+* Merged CAF tag 'LA.UM.8.2.r1-07200-sdm660.0' into gps 
+* Added CPU and GPU Boost Toggles in ZenParts
+* Used Clang 11.0.1 to compile kernel
+* Fixed Smart Charging not working
+* Disabled 5Ghz Hotspot support
+* Updated to Coral August FP
+* Fix WLAN Tethering Offload
+* Enable VoLTE/VoWiFi support for Telkomsel Indonesia
+* Switch to QTI BT stack
+* Updated some Camera Blobs
+* Source side changes and many more

@@ -1,0 +1,24 @@
+{
+	"response": [
+		{
+			"maintainer": "Aditya Ramakrishnan",
+			"oem": "Asus",
+			"device": "Zenfone Max Pro M1",
+			"filename": "crDroidAndroid-10.0-20200909-X00TD-v6.9.zip",
+			"download": "https://sourceforge.net/projects/lavenderlair/files/X00TD/6.x/crDroidAndroid-10.0-20200909-X00TD-v6.9.zip/download",
+			"timestamp": 1599616304,
+			"md5": "13360be163b15d35d7829c027132e1c2",
+			"size": 759286117,
+			"version": "6.9",
+			"buildtype": "Monthly",
+			"forum": "https://forum.xda-developers.com/asus-zenfone-max-pro-m1/development/rom-crdroid-android-6-2-t4048161",
+			"gapps": "https://opengapps.org/?arch=arm64&api=10.0&variant=nano",
+			"firmware": "",
+			"modem": "",
+			"bootloader": "",
+			"recovery": "https://orangefox.download/en/device/x00t",
+			"paypal": "https://www.paypal.com/paypalme/AdityaRamakrishnan",
+			"telegram": "https://t.me/crdroidX00TD"
+		}
+	]
+}
