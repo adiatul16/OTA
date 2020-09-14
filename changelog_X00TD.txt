@@ -4,6 +4,17 @@ Device: Asus Zenfone Max Pro M1 (X00TD)
 Device maintainer: Aditya Ramakrishnan
 Firmware Version: 063
 
+=== 14-09-2020 ===
+* Initial CrDroid 6.10 code
+* Upstreamed kernel to 4.4.236
+* Address some ZenParts Denials
+* Added Pixel Charger Animation
+* Optimised Pixel Charger Animation
+* Updated to Coral R Fingerprint
+* Removed some libhidl stuff
+* Remove TARGET_USES_64_BIT_BINDER
+* Updated Translations
+
 === 09-09-2020 ===
 * Initial CrDroid 6.9 code
 * Darkonah kernel as default (4.4.233)
