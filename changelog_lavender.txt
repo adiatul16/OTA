@@ -4,6 +4,15 @@ Device: Redmi Note 7 Lavender (lavender)
 Device maintainer: Aditya Ramakrishnan
 Firmware Version: V11.0.1.0.QFGMIXM
  
+=== 17-09-2020 ====
+* Upstreamed kernel to 4.4.236
+* Initial CrDroid 6.10 code
+* Show bolt charging symbol next to battery percent when using hidden battery style 
+* Updated clang to 11.0.4
+* Removed libhidl
+* Fixed GCAM force closing
+* Merged September Security Patch
+
 === 06-09-2020 ====
 * Fixed some smart charging overlays and nodes
 * Compiled kernel with Clang 11.0.4
