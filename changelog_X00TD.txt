@@ -4,7 +4,7 @@ Device: Asus Zenfone Max Pro M1 (X00TD)
 Device maintainer: Aditya Ramakrishnan
 Firmware Version: 063
 
-=== 14-09-2020 ===
+=== 17-09-2020 ===
 * Initial CrDroid 6.10 code
 * Upstreamed kernel to 4.4.236
 * Address some ZenParts Denials
