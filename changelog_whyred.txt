@@ -1,4 +1,33 @@
 ====================
+     01-14-2021
+====================
+
+   * android
+b1e81ad manifest: Track system/security
+01f414e manifest: Track libcore
+
+   * art
+927856108c Add newStringFromUtf8Bytes native implementation.
+
+   * frameworks/av
+bae3cc9ddf Revert "libstagefright: Free buffers on observer died"
+
+   * frameworks/base
+58709b9e913 Camera: Skip stream size check for whitelisted apps
+441ca220244 Merge pull request #564 from jjhitel/11.0
+
+   * hardware/lineage/interfaces
+25c9051 Add 'vendor.' prefix to a vendor HAL service name
+6841153 Add interface info to .rc files
+
+   * libcore
+b1b944af9b XML Pull Parser optimizations
+4362763a0a Add newStringFromUtf8Bytes native implementation.
+
+   * system/security
+8db8879 keystore: Block key attestation for Google Play Services
+
+====================
      01-13-2021
 ====================
 
@@ -24,6 +53,10 @@ c669b542 sdm660-common: Replace audio@2.0-service with audio.service
 8cbcaa3f sdm660-common: Remove XiaomiParts and XiaomiDoze
 9c0f7ea1 sdm660-common: Dont use Clang to compile
 29199cdc  sdm660-common: Update Thermal blobs from jasmine V11.0.17.0.QDIMIXM
+
+   * frameworks/base
+d4294830195 Revert "core: Report fake model name to GMS using reflection"
+8483bc36e31 KeyStore: Block key attestation for Google Play Services
 
    * kernel/xiaomi/sdm660
 91503b80cf1c Merge tag 'v4.4.251' into 11-EAS
@@ -79,6 +112,22 @@ aca8d0a Merge 'lineage-18.1' into 11.0
 
    * frameworks/base
 8c55a520322 New Crowdin updates (#560)
+
+   * packages/apps/Launcher3
+b66ff8bdf New Crowdin updates (#109)
+bf5a2e338 QuickStep: Make sure no blur on homescreen
+9c5c6387e Revert "Launcher3: Reapply states on resuming"
+
+   * packages/apps/Settings
+8073692c85 Battery: show battery temp on power summary
+7ff32c3eca Settings: Match shortcut colors with settings icon
+01aee65f0b Merge pull request #91 from Mustang-ssc/11.0-oneclickbattery
+
+====================
+     01-11-2021
+====================
+
+   * frameworks/base
 f73428873e3 Disable FOD animation if animation resource package not installed
 e915dc723d3 Move FOD Animation resources to standalone package [1/2]
 bbd71b98b77 SystemUI: FOD pressed colors [1/2]
@@ -100,27 +149,12 @@ ee6ae28f837 FODCircleView: cleanup FOD animation implementation
 14acdf005ec Revert "FODCircleView: Hide fod while going to sleep"
 
    * packages/apps/Launcher3
-b66ff8bdf New Crowdin updates (#109)
-bf5a2e338 QuickStep: Make sure no blur on homescreen
-9c5c6387e Revert "Launcher3: Reapply states on resuming"
+f84a82692 Launcher: Fix gesture navigation fail to move to bottom
 
    * packages/apps/Settings
-8073692c85 Battery: show battery temp on power summary
-7ff32c3eca Settings: Match shortcut colors with settings icon
-01aee65f0b Merge pull request #91 from Mustang-ssc/11.0-oneclickbattery
 adc66232b1 Settings: PowerUsageSummary: open advanced usage on header click
 82d0f9c0db Allow tuning ambient display with sensors [3/3]
 9f6352403f Settings: Show media cover art and pulse toggles for lockscreen
-
-====================
-     01-11-2021
-====================
-
-   * packages/apps/Launcher3
-f84a82692 Launcher: Fix gesture navigation fail to move to bottom
-0c4ec3d73 Launcher3: Reapply states on resuming
-369053081 Launcher3: Use MODEL_EXECUTOR directly
-05501c69e Quickstep: Fix crash in StaggeredWorkspaceAnim
 
 ====================
      01-10-2021
@@ -133,18 +167,6 @@ ef1d672 Merge 'lineage-18.1' into 11.0
    * device/lineage/sepolicy
 36efadc touch: Add IKeySwapper context
 6f08fbf qcom: gmscore_app: Ignore denials on DSP files too
-
-   * device/xiaomi/whyred
-25648fc whyred: Switch to Coral R Jan Fingerprint
-
-   * frameworks/av
-387e640647 CameraDeviceClient: make mPrivilegedClient static
-872b00a493 Camera: Skip stream size check for whitelisted apps.
-a695500bfc libcameraservice: Don't pass NULL args on setCallbacks call
-
-   * frameworks/base
-0eac5479083 iorap: Enable by default
-504dc5385d5 fixup! SystemUI: old style mobile data indicators
 
    * hardware/qcom-caf/sm8150/display
 5b15b1a50 display: Remove display-commonsys-intf git subtree
@@ -175,6 +197,9 @@ d2092cfefca6 ALSA: usb-audio: fix sync-ep altsetting sanity check
 6c741f4170c0 ALSA: hda/ca0132 - Fix work handling in delayed HP detection
 
    * packages/apps/Launcher3
+0c4ec3d73 Launcher3: Reapply states on resuming
+369053081 Launcher3: Use MODEL_EXECUTOR directly
+05501c69e Quickstep: Fix crash in StaggeredWorkspaceAnim
 0593fb6a4 Launcher3: move kill all button in middle
 9804957e6 Launcher3: Add back button in home settings.
 d84469e76 New Crowdin updates (#105)
@@ -205,20 +230,6 @@ ad6d63dfc Launcher3: Add permission to allow updating database
 afb3cf8ff Launcher3: move clear all button to actions view
 64db6bdc3 Launcher3: Add restart action for toggling settings
 bf9d56da1 Launcher3: Rearrange settings
-b931af060 Elevate to 'core/platform' app'
-52c226179 Launcher3: Use system fonts
-4be9e8a23 Launcher3: Follow system color for dark style
-58edceb0e Launcher3: Use 75% black scrim
-3abaa377e Launcher: Improve translucent look and enable blur in Scrim.
-c69733f02 Revert "Do not blur if all apps is fully visible".
-3c06fd09c Revert "Make all apps scrim solid color".
-6ebb4f1db Revert "Make darkmode allapps backgrounds solid black".
-8e3e42c8c quickstep: Bump max blur radius to 175 px
-9348d5e35 Add back button to Settings
-1143973b4 Launcher3: use common style for recents task menu divider
-629f1f0a5 Launcher3: Let's make the search bar on all apps round
-bce4f43b5 Launcher3: Update adaptive icon
-3953393ec Launcher3: Homecoming
 
    * packages/apps/crDroidSettings
 71ae97b6 crDroidSettings: Update name for Cyberpunk 2077 FOD animation
@@ -235,24 +246,73 @@ c478fe2c [SQUASH] crDroidSettings: FOD icon picker [2/2]
      01-09-2021
 ====================
 
+   * device/xiaomi/whyred
+25648fc whyred: Switch to Coral R Jan Fingerprint
+
+   * frameworks/av
+387e640647 CameraDeviceClient: make mPrivilegedClient static
+872b00a493 Camera: Skip stream size check for whitelisted apps.
+a695500bfc libcameraservice: Don't pass NULL args on setCallbacks call
+
    * frameworks/base
-20aea15a4c5 New Crowdin updates (#559)
+0eac5479083 iorap: Enable by default
+504dc5385d5 fixup! SystemUI: old style mobile data indicators
+
+   * packages/apps/Launcher3
+b931af060 Elevate to 'core/platform' app'
+52c226179 Launcher3: Use system fonts
+4be9e8a23 Launcher3: Follow system color for dark style
+58edceb0e Launcher3: Use 75% black scrim
+3abaa377e Launcher: Improve translucent look and enable blur in Scrim.
+c69733f02 Revert "Do not blur if all apps is fully visible".
+3c06fd09c Revert "Make all apps scrim solid color".
+6ebb4f1db Revert "Make darkmode allapps backgrounds solid black".
+8e3e42c8c quickstep: Bump max blur radius to 175 px
+9348d5e35 Add back button to Settings
+1143973b4 Launcher3: use common style for recents task menu divider
+629f1f0a5 Launcher3: Let's make the search bar on all apps round
+bce4f43b5 Launcher3: Update adaptive icon
+3953393ec Launcher3: Homecoming
 
    * packages/apps/ThemePicker
 e3bacf0 Revert "ThemePicker: show scrollbar on clock faces"
 
+====================
+     01-08-2021
+====================
+
+   * frameworks/base
+20aea15a4c5 New Crowdin updates (#559)
+091b2535133 base: Add bool to enable/disable doze by default
+11a0153e362 Allow tuning ambient display with sensors [1/3]
+47e7d69a495 New Crowdin updates (#550)
+
+   * hardware/lineage/interfaces
+ba7d528 touch: Add keys swap interface
+
    * packages/apps/crDroidSettings
 0cbe716a New Crowdin updates (#683)
 84c28a2d Allow tuning ambient display with sensors [2/3]
+8560ec77 New Crowdin updates (#681)
+f2d75127 New Crowdin updates (#680)
+8882674a New Crowdin updates (#679)
+
+   * system/core
+ca566e75d rootdir: init.rc: use default dirty writeout policy
+
+   * system/iorap
+3f05e14 iorap: Increase daemon priority
 
 ====================
-     01-08-2021
+     01-07-2021
 ====================
 
    * android
 0c72e3d Merge 'lineage-18.1' into 11.0
 6c6066c manifest: Track WallpaperPicker2
 b2f66f1 manifest: Untrack BT    *s
+869041b manifest: Track our forked hardware/google/pixel
+c1c7802 manifest: android-11.0.0_r19 -> android-11.0.0_r27
 
    * build/make
 a256151d7 Use 'release-keys' for build tag
@@ -277,9 +337,6 @@ a332b4587d audiopolicy: No longer make re-assigning legacy audio groups fatal.
 207aaeaa8b Nuplayer: Handle a corner case during stop
 
    * frameworks/base
-091b2535133 base: Add bool to enable/disable doze by default
-11a0153e362 Allow tuning ambient display with sensors [1/3]
-47e7d69a495 New Crowdin updates (#550)
 1bba0fa3af5 Update Crowdin configuration file
 b2e9473afa3 Fix the wrong lastBackgroundTime in UidRecord
 3be5b125b1d Allow to hide arrow for back gesture [1/2]
@@ -618,6 +675,7 @@ ca003040142 Suppress FingerprintManager logspam
 1b1af0a54a1 Add crdroid utils
 1fc32c32cc4 base: Add metric for crDroid Settings
 66a26d8adee base: Add stub files
+b4296af952e Merge tag 'android-11.0.0_r27' into staging/lineage-18.1_merge-android-11.0.0_r27
 
    * frameworks/native
 cd3582d77 SF: handle long waiting Layer sync point
@@ -630,7 +688,6 @@ a85a32129 Add dalvik-heap device configs for 8/12/16 GiB devices
 d0ff7dfd8 SF: Add retry to EventThread postEvent
 
    * hardware/lineage/interfaces
-ba7d528 touch: Add keys swap interface
 4f96e3f trust: set system vintf fragment xml to framework
 
    * hardware/qcom-caf/common
@@ -642,33 +699,6 @@ ba7d528 touch: Add keys swap interface
    * hardware/qcom-caf/sm8250/display
 42ad8e54d display: Remove display-commonsys-intf git subtree
 
-   * packages/apps/crDroidSettings
-8560ec77 New Crowdin updates (#681)
-f2d75127 New Crowdin updates (#680)
-8882674a New Crowdin updates (#679)
-
-   * system/core
-ca566e75d rootdir: init.rc: use default dirty writeout policy
-
-   * system/iorap
-3f05e14 iorap: Increase daemon priority
-
-   * vendor/lineage
-e27630b1 crdroid: Bump to version 7.2
-f0fe7c1b audio: Add missing Effect_Tick.ogg effect sound used by the UI
-d493aa21 partner_gms: Simplify if/else if logic
-
-====================
-     01-07-2021
-====================
-
-   * android
-869041b manifest: Track our forked hardware/google/pixel
-c1c7802 manifest: android-11.0.0_r19 -> android-11.0.0_r27
-
-   * frameworks/base
-b4296af952e Merge tag 'android-11.0.0_r27' into staging/lineage-18.1_merge-android-11.0.0_r27
-
    * packages/apps/Launcher3
 94afb12f2 Revert "Trebuchet: Add extra privapp permissions xml"
 
@@ -677,8 +707,10 @@ b4296af952e Merge tag 'android-11.0.0_r27' into staging/lineage-18.1_merge-andro
 24efc71 WallpaperPicker2: Increase height of bottom area
 3d2cda1 WallpaperPicker2: Match backgrounds to device theme
 
-   * system/core
-3b04fd96a Merge 'lineage-18.1' into 11.0
+   * vendor/lineage
+e27630b1 crdroid: Bump to version 7.2
+f0fe7c1b audio: Add missing Effect_Tick.ogg effect sound used by the UI
+d493aa21 partner_gms: Simplify if/else if logic
 
 ====================
      01-06-2021
@@ -771,6 +803,9 @@ dc8ec5d Build bootctrl.sdm845 using Android.bp
    * system/bt
 c1f9733f6 Merge tag 'android-11.0.0_r27' into staging/lineage-18.1_merge-android-11.0.0_r27
 
+   * system/core
+3b04fd96a Merge 'lineage-18.1' into 11.0
+
    * vendor/qcom/opensource/commonsys-intf/display
 7884ddef display-commonsys-intf: Define a soong namespace
 
@@ -796,32 +831,6 @@ cbba130 common: dynamic: Replace packageblacklist with packageexludelist
    * hardware/lineage/interfaces
 742a534 trust: Include VINTF fragments
 
-   * hardware/qcom-caf/sm8250/audio
-cf10f092c audio: Drop LOCAL_COPY_HEADERS usage
-
-   * hardware/qcom-caf/sm8250/display
-eb5016cd4 display: Drop LOCAL_COPY_HEADERS usage
-efb069690 Add C2D_COLOR_FORMAT_420_P010 to C2D_YUV_FORMAT
-
    * hardware/qcom-caf/sm8250/media
 41e7d380e media: Add local fastcv header
-21dcb528f media: Drop LOCAL_COPY_HEADERS usage
-
-====================
-     01-04-2021
-====================
-
-   * hardware/qcom-caf/msm8996/display
-06c6b13a device_impl: Fix format types to avoid compilation errors
-fd1829ef Add C2D_FORMAT_BT601_FULLRANGE to C2D_FORMAT_MODE
-bb3ac843 Add C2D_COLOR_FORMAT_420_TP10 to C2D_YUV_FORMAT
-5b561190 Merge tag 'LA.UM.9.6.2.r1-03600-89xx.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/display into HEAD
-ead59119 Merge tag 'LA.UM.9.6.2.r1-03600-89xx.0' of https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/display-commonsys-intf into HEAD
-
-   * hardware/qcom-caf/msm8996/media
-49d8165d Merge tag 'LA.UM.9.6.2.r1-03600-89xx.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/media into HEAD
-
-   * packages/apps/crDroidSettings
-71752552 Merge pull request #677 from raystef66/cr7_arrow
-9da36898 Settings: Allow to hide arrow for back gesture [2/2]
 
