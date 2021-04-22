@@ -1,0 +1,24 @@
+{
+	"response": [
+		{
+			"maintainer": "Aditya Ramakrishnan (Rusticoast348)",
+			"oem": "Redmi",
+			"device": "Redmi Note 9 Series (miatoll)",
+			"filename": "crDroidAndroid-11.0-20210422-miatoll-v7.5.zip",
+			"download": "https://sourceforge.net/projects/lavenderlair/files/miatoll/7.x/crDroidAndroid-11.0-20210422-miatoll-v7.5.zip/download",
+			"timestamp": 1619090137,
+			"md5": "9e5c3c612e1ea2b6dc937c02815bcd52",
+			"size": 1249114265,
+			"version": "7.5",
+			"buildtype": "Weekly",
+			"forum": "",
+			"gapps": "https://sourceforge.net/projects/nikgapps/files/Releases/NikGapps-R/",
+			"firmware": "",
+			"modem": "",
+			"bootloader": "",
+			"recovery": "https://files.orangefox.tech/OrangeFox-Beta/miatoll/OrangeFox-R11.0_1-Beta-miatoll.zip",
+			"paypal": "https://www.paypal.com/paypalme/AdityaRamakrishnan",
+			"telegram": "https://t.me/Rusticoast348"
+		}
+	]
+}

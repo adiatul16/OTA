@@ -1,0 +1,415 @@
+====================
+     04-22-2021
+====================
+
+   * device/xiaomi/miatoll
+5f76d03 Updater: Set OTA overlay for Updater
+
+   * device/xiaomi/sm6250-common
+5d378c9 sm6250-common: Build with clang 12.0.5
+1240d4d sm6250-common: Downrev Health HAL 2.1 >> 2.0
+844e41f sm6250-common: sepolicy: Address some denials
+6583715 sm6250-common: Register and enable qcrild & data services on boot
+3a096bd sm6250-common: sepolicy: Add vendor prefix to some coredomains
+7097e32 sm6250-common: sepolicy: address some more denials
+b00ba28 sm6250-common: Enable full vndk support
+d5cf771 sm6250-common: tune vibration patterns
+f0210e3 sm6250-common: prebuilts: Add GCamGOPrebuilt
+d01552f sm6250-common: Switch to source built vendor.qti.hardware.perf@2.2.so
+47fe106 sm6250-common: Build libminijail and system variant of libavservices_minijail from source
+3a001d4 sm6250-common: don't configure read ahead parameters with init.qcom.post_boot.sh
+0a9503c sm6250-common: Optimize everything on preopt
+7011bb5 sm6250-common: Enable zram-writeback job
+f0278ce sm6250-common: Enable haptic text cursor
+303b6ae sm6250-common: Turn on support of multiple vibration intensities
+ba95e8b sm6250-common: Add Notch Bar Killer overlay
+84c1656 sm6250-common: Add overlay for masking the notch
+e51a95f sm6250-common: Don't sign Wifi RROs with platform cert
+dae21a3 sm6250-common: Silence clang warnings during kernel compile
+2f179c9 sm6250-common: rootdir: Import init.qcom.early_boot.sh
+7fedb7b [BLOBS] sm6250-common: Import missing blobs needed for WFD functionality
+c1076fe sm6250-common: wlan: Smarter decisions on whether to use a 2- or 5Ghz AP.
+33951e3 sm6250-common: wlan: Disable logging.
+4ac843e sm6250-common: wlan: Relax WiFi re-association RSSI thresholds.
+7dc6d65 sm6250-common: wlan: Enable DFS channel scanning in P2P search.
+cbe2b92 sm6250-common: rootdir: zram tuning
+bc0e440 sm6250-common: audio: enforce 24-bit audio for offload playback
+f2b3cc9 sm6250-common: wifi: enable QPower and Deep Sleep at the same time
+8a8841e sm6250-common: Fix mic issues in apps like WhatsApp
+da27dfc sm6250-common: Remove dexpreopt flags that are default
+ee684cd sm6250-common: overlay: Pin surfaceflinger
+99e0362 sm6250-common: Don't pin camera app in memory
+01ae81e sm6250-common: overlay: Set fast charging indicator threshold to 10.8W
+c362dfd sm6250-common: Force disable wide color display
+6b97a0c sm6250-common: Update TetheringOverlay & WifiOverlay
+0a9dc42 sm6250-common: overlay: Configure SQLite to operate in MEMORY mode
+2761cf8 sm6250-common: Add kpti=off to boot command line
+980e1a7 sm6250-common: Guard tree with soong namespace  * prevent module conflicts with other device trees
+dcd17e7 sm6250-common: Disable COMPRESS_VOIP in boardconfig
+a9f9031 Revert "sm6250-common: remove unused audio configs"
+e5a165a Revert "sm6250-common: audio: update configs from curtana RKQ1.200826.002"
+9cb4881 sm6250-common: Enable Updatable Apexes
+0e6671a sm6250-common: Include MiuiCamera
+7e5fbec sm6250-common: sepolicy: label system manufacturer prop
+d818413 sm6250-common: Sync hardware/xiaomi from lineage
+8b0194e sm6250-common: Switch to standalone extract utils
+ae2d6c3 sm6250-common: Pack libwfdaac_vendor for WFD
+4489418 sm6250-common: build soundtrigger from source
+be40d94 sm6250-common: sepolicy: Address last remaining denials
+7017bc3 sm6250-common: import Hotword Enrollment blobs [2/2]
+200ec4b sm6250-common: Stop enforcing AAC on SBC headphones These props seemed to enforce a higher codec on lower end headphones leading to them not working and not being able to reproduce sound
+e697b30 sm6250-common: Add Missing BT & Audio Props These are needed for the AAC Bluetooth Audio Codec
+06ab0cf sm6250-common: Switch Skia rendering backend to Vulkan
+7efbf50 sm6250-common: increase ZRAM to 2GB
+9d0efd7 sm6250-common: Address camera hal denials
+b5a4303 sm6250-common: sepolicy: allow appdomain to get persist_camera_prop
+be4cb1f sm6250-common: Enforcing bring up for R
+3bf71de sm6250-common: set TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY to 96
+d53ae51 sm6250-common: import vibration pattern from PE Davinci
+3a3a527 sm6250-common: Add Channel Bonding for 2.4GHz
+c03ed9d sm6250-common: Enable SAE It is supported by our device and There is no Reason to not to
+da073a0 sm6250-common: Correct GBoard Spacing
+e0d2f94 sm6250-common: add sensorservice in manifest
+bf6ffa0 sm6250-common: manifest: uprev vendor.qti.hardware.perf to 2.2
+74d4930 sm6250-common: don't configure zram parameters with init.qcom.post_boot.sh
+3b7fc7f [BLOBS] sm6250-common: Import MIUI power-off charging daemon - from qssi-user 11 RKQ1.200826.002 V12.0.1.0.RJWINXM release-keys
+a69c3d8 sm6250-common: Drop no longer existed BluetoothQti
+9afdd08 sm6250-common: audio: Add hotword input for hotword mic concurrency
+8c5bd80 sm6250-common: Add permissions & overlay for FPS Info
+4d16b23 sm6250-common: Add sepolicy for QS System Info
+484b700 sm6250-common: overlay: Add overlays for QS System Info
+3af5fba sm6250-common: CPUInfo: Add CPU Temp Overlay
+429e70b sm6250-common: sepolicy: allow system_server access to charging sysfs node
+0b6d88d sm6250-common: rootdir: Allow permissions to nodes for Smart Charging
+26f720c sm6250-common: Add proper nodes for smart charging
+94cae89 sm6250-common: sepolicy: Add sepolicy for battery health
+a1eb552 sm6250-common: Add overlays for battery health nodes
+3bfb9e4 sm6250-common: Enable real time lockscreen charging current values
+f440ed1 sm6250-common: charging rapidly -> Turbo charging
+1af5fc3 [BLOBS] sm6250-common: Add Dirac blobs
+a917ef7 sm6250-common: XiaomiParts: Remove SELinux toggle
+1a6fd5c [SQUASH] sm6250-common: XiaomiParts: Get rid of some unneeded features
+c13abd7 sm6250-common: XiaomiParts: Add GPU Boost
+4d13661 sm6250-common: XiaomiParts: Add ACTION_SCREEN_ON intent filter
+e789418 sm6250-common: XiaomiParts: Increase BootReceiver priority
+cf79937 sm6250-common: XiaomiParts: Switch to TaskStackListener
+a0005b0 sm6250-common: XiaomiParts: Add switchbar to disable dynamic thermal * Disabled by default since all profile are set to 0 by default.
+2686aba sm6250-common: XiaomiParts: Set dynamic thermal interval to 5 sec
+2cc44d9 sm6250-common: XiaomiParts: Drop support for browser thermal profile
+a0fea5a sm6250-common: XiaomiParts: Add dynamic thermal profile implementation
+edeee80 sm6250-common: XiaomiParts: : Remove intent for BootReceiver
+876ef6e [SQUASH] sm6250-common: XiaomiParts: Introduce smart charging
+29a0beb sm6250-common: XiaomiParts: Fill dashboard icon with primary color
+ae8c041 sm6250-common: add XiaomiDoze & XiaomiParts spanish translations
+56135b3 sm6250-common: add XiaomiDoze & XiaomiParts pt-BR translations
+ea76e63 sm6250-common: XiaomiParts: Rearrange categories alphabetically
+52e4344 sm6250-common: XiaomiParts: Add SELinux toggle
+0d817ea sm6250-common: XiaomiParts: Fix Touchboost and Fastcharge toggle always on
+5da4a2d sm6250-common: XiaomiParts: USB Fastcharge improvement
+42ec9e2 sm6250-common: XiaomiParts: Touchboost Improvements
+c75a080 sm6250-common: XiaomiParts: Add Touchboost toggle
+3f2c293 sm6250-common: XiaomiParts: Implement Clear Speaker
+2e19c2d sm6250-common: XiaomiParts: Inject XiaomiDoze
+2de0aba [SQUASH] sm6250-common: XiaomiParts: Import from asus-sdm660 - Features included  • KCAL color calibration  • FPS info overlay toggle  • Ambeint display gestures  • Dirac sound enhancer  • USB fastcharge
+f230972 sm6250-common: doze: Add drawable icons to doze menus!
+7c994f9 sm6250-common: doze: Add Doze Tile
+7ccdf48 sm6250-common: Add XiaomiDoze
+2e52835 sm6250-common: releasetools: Fix incrementals generation
+2bd079a sm6250-common: Add config value for a11y color mode
+f76d623 sm6250-common: Remove COLOR_MODE_SATURATED
+b84bc9e sm6250-common: Enable adaptive color mode
+042a8f7 sm6250-common: Override config_availableColorModes
+bd78b88 sm6250-common: overlay: Disable NearbyMessagingService and DiscoveryService
+176e506 sm6250-common: overlay: Enable supported overlays
+634ccae sm6250-common: overlay: Enable freeform windows
+3e5695f sm6250-common: overlay: Add more defaults
+09371b3 sm6250-common: overlay: Disable bluetooth by default
+6f014f4 sm6250-common: overlay: Set brightness & screen timeout defaults
+44ba113 sm6250-common: overlay: Disable UI touch sounds by default
+f4c44eb sm6250-common: overlay: Enable display burn-in-protection in Ambient Display
+6242726 sm6250-common: overlay: AOD Disabled by default
+b990e9f sm6250-common: overlay: Enable Always on Display
+568a5a8 sm6250-common: overlay: Add ambient display support
+
+   * kernel/xiaomi/sm6250
+02af1f53cd64 defconfig: Set LocalVersion as Xiaomi_SM6250
+
+====================
+     04-21-2021
+====================
+
+   * device/xiaomi/miatoll
+1a943d5 miatoll: Adapt for CrDroid
+
+   * external/asus/stitchimage
+336979d Merge pull request #2 from Laker87/11.0
+415511f Merge pull request #3 from Laker87/UpdateSI
+
+   * external/chromium-webview
+729ee65 Update Chromium Webview to 90.0.4430.82
+
+   * frameworks/base
+c0e4b8da25ed Use Asus Stitchimage as default screenshot service
+8e7ffd560519 Merge pull request #641 from mukesh22584/11.0
+0d09d0e4216b SystemUI: Add overlay to disable assist hint on lockscreen (#433)
+
+   * frameworks/native
+a05f158f7 Merge pull request #5 from Laker87/11.0
+
+   * packages/apps/Updater
+d6ee83d pdater: Fix exporting updates
+
+====================
+     04-20-2021
+====================
+
+   * device/xiaomi/sm6250-common
+655c5c5 sm6250-common: remove manifest entries specified in fragments
+29799fe [BLOBS] sm6250-common: add missing misys manifests
+27a6d89 sm6250-common: remove qcom.fmradio boot jar
+
+====================
+     04-19-2021
+====================
+
+   * external/asus/stitchimage
+9201f46 Update prebuilt apps
+405c645 StitchImage: use accent for buttons
+
+====================
+     04-18-2021
+====================
+
+   * art
+d00a3eb02f art: Disable host and target debugging
+
+   * external/rsync
+1f245165 config: Undef USE_ICONV_OPEN as it segfaults for us
+
+   * frameworks/base
+8db3d42c1a70 New Crowdin updates (#639)
+418918433175 Cache bluetooth A2DP in AudioService callback thread
+a34a7b463a61 Use alphaoptimized layout for icons on left
+68bbd7973059 Remove lineage holder network traffic leftover
+f58bf1ef286d Merge 'lineage-18.1' into 11.0
+
+   * packages/apps/FaceUnlockService
+5a170d6 Ship as crdroid faceunlock service
+
+   * packages/apps/Launcher3
+645e1f36e New translations (#142)
+
+   * packages/apps/crDroidSettings
+ddcf37ea New Crowdin updates (#744)
+
+   * vendor/addons
+c89231c addons: Add OnePlus Sans font
+
+   * vendor/lineage
+f4df4b27 crdroid: Build OnePlus Sans Font
+
+====================
+     04-17-2021
+====================
+
+   * art
+6a063a034b art: Enable compiler/dalvikvm/dex2oat/runtime -O3
+3862193ed7 ARM64: FP16 min and max intrinsic for ARMv8
+
+   * build/make
+0dea99218 Merge 'lineage-18.1' into 11.0
+
+   * build/soong
+154b7fc1 Merge 'lineage-18.1' into 11.0
+ae90578a Make sure prebuilt modules are exported before attempting to use them
+
+   * frameworks/base
+70af95c7b26e SystemUI: Pass lock pattern size to biometrics auth
+
+   * kernel/xiaomi/sm6250
+eb73c2aa8627 Merge tag 'v4.14.231' of https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux into arrow-11.0
+
+   * packages/apps/LineageParts
+998e99e Merge pull request #6 from Laker87/11.0
+
+   * packages/apps/Nfc
+e675f520 NfcNci: make T3T/Nfc-F HCE optional
+
+   * packages/apps/Seedvault
+28f9447 Also consider contacts with account 'com.android.contacts' for backup
+d5b32d1 Bump to 11-1.1
+
+====================
+     04-16-2021
+====================
+
+   * android
+9f5d3df manifest: Switch to clang 12.0.5
+
+   * device/lineage/sepolicy
+7e915b9 Merge pull request #11 from Astridxx/11.0
+3205189 sepolicy: Address screenshot sound
+
+   * kernel/xiaomi/sm6250
+cf256fbcbe34 Linux 4.14.231
+bea39f1eed72 xen/events: fix setting irq affinity
+125571123c8f perf map: Tighten snprintf() string precision to pass gcc check on some 32-bit arches
+522a0191944e netfilter: x_tables: fix compat match/target pad out-of-bound write
+42427209317d net: phy: broadcom: Only advertise EEE for supported modes
+06367c35f36d block: only update parent bi_status when bio fail
+bbae0543ef9c gfs2: report "already frozen/thawed" errors
+97329e011ffe drm/imx: imx-ldb: fix out of bounds array access warning
+67c9beda8497 KVM: arm64: Disable guest access to trace filter controls
+d21a8852e738 KVM: arm64: Hide system instruction access to Trace registers
+90bc77b7083a Revert "cifs: Set CIFS_MOUNT_USE_PREFIX_PATH flag on setting cifs_sb->prepath."
+df9aa96b613d net: ieee802154: stop dump llsec params for monitors
+33845d04d42b net: ieee802154: forbid monitor for del llsec seclevel
+b54e71dbe3ed net: ieee802154: forbid monitor for set llsec params
+266e3f2ef0d1 net: ieee802154: fix nl802154 del llsec devkey
+3a94a5b2e0ba net: ieee802154: fix nl802154 add llsec key
+3ee9f1bafd06 net: ieee802154: fix nl802154 del llsec dev
+1804bf103e73 net: ieee802154: fix nl802154 del llsec key
+37580e6837c0 net: ieee802154: nl-mac: fix check on panid
+d103fd20f053 net: mac802154: Fix general protection fault
+87f225abe010 drivers: net: fix memory leak in peak_usb_create_dev
+64aabb1aecae drivers: net: fix memory leak in atusb_probe
+f6420532cfd7 net: tun: set tun->dev->addr_len during TUNSETLINK processing
+bd7b29fb365e cfg80211: remove WARN_ON() in cfg80211_sme_connect
+e9c1341b4c94 usbip: fix vudc usbip_sockfd_store races leading to gpf
+d4a8169615a0 net/ncsi: Avoid GFP_KERNEL in response handler
+601e0eb63743 net/ncsi: Refactor MAC, VLAN filters
+f4e7325060fe net/ncsi: Add generic netlink family
+32e0a805c060 net/ncsi: Don't return error on normal response
+f013e2b4c8c6 net/ncsi: Improve general state logging
+e49c41505ae8 net/ncsi: Make local function ncsi_get_filter() static
+e789904a093b clk: socfpga: fix iomem pointer cast on 64-bit
+a94d89d1573a RDMA/cxgb4: check for ipv6 address properly while destroying listener
+9def0f437728 net/mlx5: Fix placement of log_max_flow_counter
+4dea7a1bd412 s390/cpcmd: fix inline assembly register clobbering
+9948ff55ed9c workqueue: Move the position of debug_work_activate() in __queue_work()
+0834c021f5d1 clk: fix invalid usage of list cursor in unregister
+318c973db612 clk: fix invalid usage of list cursor in register
+bf59100b9609 soc/fsl: qbman: fix conflicting alignment attributes
+d3539ecc4147 ASoC: sunxi: sun4i-codec: fill ASoC card owner
+1c1791e0ebee net/ncsi: Avoid channel_monitor hrtimer deadlock
+bb271612b3c7 ARM: dts: imx6: pbab01: Set vmmc supply for both SD interfaces
+439340105136 net:tipc: Fix a double free in tipc_sk_mcast_rcv
+22d33117e530 gianfar: Handle error code at MAC address change
+a4173e6b7ba3 sch_red: fix off-by-one checks in red_check_params()
+59a571e2f630 amd-xgbe: Update DMA coherency values
+be3a848d85f6 ASoC: wm8960: Fix wrong bclk and lrclk with pll enabled for some chips
+e3b12e7336b7 regulator: bd9571mwv: Fix AVS and DVFS voltage range
+d1e0d46fb158 i2c: turn recovery error on init to debug
+534d2cf487b9 usbip: synchronize event handler with sysfs code paths
+fbf3417833b0 usbip: stub-dev synchronize sysfs code paths
+5f2a149564ee usbip: add sysfs_lock to synchronize sysfs code paths
+3e9861a7925e net: sched: sch_teql: fix null-pointer dereference
+12ba6288b027 net: ensure mac header is set in virtio_net_hdr_to_skb()
+3d40b47bcc42 batman-adv: initialize "struct batadv_tvlv_tt_vlan_data"->reserved field
+cc2a577122d8 ARM: dts: turris-omnia: configure LED[2]/INTn pin as interrupt pin
+68ce97f7feb2 parisc: avoid a warning on u8 cast for cmpxchg on u8 pointers
+9264bb1315cf parisc: parisc-agp requires SBA IOMMU driver
+badefcb13da5 fs: direct-io: fix missing sdio->boundary
+f77ee7a287f5 ocfs2: fix deadlock between setattr and dio_end_io_write
+43d2e477bb0f ia64: fix user_stack_pointer() for ptrace()
+8d230ed064b6 net: ipv6: check for validity before dereferencing cfg->fc_nlinfo.nlh
+c9697faba3a1 xen/evtchn: Change irq_info lock to raw_spinlock_t
+892e1f065c1b nfc: Avoid endless loops caused by repeated llcp_sock_connect()
+02b99cae7133 nfc: fix memory leak in llcp_sock_connect()
+b1d5c07a3b59 nfc: fix refcount leak in llcp_sock_connect()
+538a6ff11516 nfc: fix refcount leak in llcp_sock_bind()
+42ccf59315f8 ASoC: intel: atom: Stop advertising non working S24LE support
+8cf440ffbbd7 ALSA: aloop: Fix initialization of controls
+
+   * prebuilts/clang/host/linux-x86/clang-7284624
+873cfcd clang 12.0.5 (based on r416183b) from build 7284624
+
+====================
+     04-15-2021
+====================
+
+   * device/lineage/sepolicy
+147643a Merge pull request #10 from Jabiyeff/11.0
+ec80c8f updater_app: Address cache_file denials
+
+   * external/asus/stitchimage
+af27706 Merge pull request #1 from Jabiyeff/11.0
+1cd0a46 Update prebuilt StitchImage for R
+
+   * frameworks/base
+c1cf8300d290 Revert "Use alphaoptimized layout for icons on left"
+
+   * packages/apps/FaceUnlockService
+eb4c275 Automatic translation import
+
+   * packages/apps/Launcher3
+c8b265acb Launcher3: Limit depth blur to overview and quick switch states
+
+   * tools/repohooks
+95795d8 lint: clean up newer pylint warnings
+bfa656d utils: run: fix file leakage with bad execs
+a89a138 utils: run: make sure exceptions always use strings for output
+
+====================
+     04-14-2021
+====================
+
+   * build/make
+75b03c622 envsetup: Fix the way we check check_product's return value
+
+   * frameworks/base
+98430f2036f7 SystemUI: Override VoLTE icon with VoWiFi when available [1/2]
+180b555f297d SystemUI: Add more VoWiFi icon styles [1/2]
+744613b14f64 SystemUI: support VoWIFI icons
+c75f749d2fcd SystemUI: Use old padding values for VoLTE icon
+d8bee02e8c60 Add option to select VoLTE icon [1/2]
+892aa55b0d47 Ability to toggle VoLTE icon in statusbar [1/2]
+fa2e1d35d5eb SystemUI: Use our default VoLTE icon
+3445566a3707 SystemUI: Fix VoLTE icon color on Light statusbar
+224e36a93f24 MobileSignalController fix corresponding to upstream FeatureConnector change
+ab21b1cc2468 ImsManager.Connector became FeatureConnector.
+82887dbe16bb SystemUI: Enhancement for volte icon
+f92e9cfe8257 SystemUI: Query IMS state after CapabilityCallback is regisered
+b460a78456d7 SystemUI: Fix HD icon missing
+12e6c99fa8e9 Adapt to IMS registration changes.
+2dfd545f587e SystemUI: Refactor the feature of volte icon
+8d18f354767f SystemUI: Fix volte icon doesn't update in real time
+37849f4cf22a SystemUI: Add new configuration for displaying Volte icon
+da5315e49fe7 Add screenshot quality setting [1/2]
+d77be4128c96 Add option to use primary system color for QS tile icon [1/2]
+84c0117f4681 SystemUI: Hide centered_area when showing heads up
+5a28ff769b48 SystemUI: Move network traffic monitor under same layout as clock
+46712ee2e10a SystemUI: Make center clock layout safe insets aware
+06c5df5fbf78 base: notch-city: Dejank immersive mode with QS panel
+37aaf2935d8b ScreenDecorations: Apply cutout on lockscreen
+305285ba8b52 ScreenDecorations: Simplify rounded size selection
+75730fb4866a ScreenDecorations: Also hide notch for Hide mode
+30be7bf45c1f ThemeOverlayController: Reload homeApp on cutout mode change
+4fe40abd1c57 base: notch-city: Add 3 mode display cutout handler
+52156aa2d1e8 New Crowdin updates (#636)
+
+   * packages/apps/Launcher3
+d59472cc5 New Crowdin updates (#141)
+
+   * packages/apps/crDroidSettings
+585783de Revert "Remove volte/vowifi settings for now"
+d9e8a3de Add screenshot quality setting [2/2]
+e0dbbacb Add option to use primary system color for QS tile icon [2/2]
+2b462112 crdoid: notch-city: Add 3 mode display cutout handler
+cd017a04 New translations (#742)
+
+   * vendor/addons
+c32c968 addons: Update HideCutout
+
+   * vendor/lineage
+a78bf547 crdroid: notch-city: Add 3 mode display cutout handler
+
+====================
+     04-13-2021
+====================
+
+   * frameworks/base
+5bbb01619ac1 LockSettingsService: Fix face removal when disabling security
+bd452e80acea PixelPropsUtils: Bump FP to Redfin April 2021
+a77d042c4907 PixelPropsUtils: Update packages
+
