@@ -1,4 +1,28 @@
 ====================
+     04-23-2021
+====================
+
+   * device/xiaomi/sm6250-common
+b95877f sm6250-common: Set TARGET_BOOTANIMATION_HALF_RES to true
+be8a5c8 sm6250-common: set TARGET_ENABLE_MEDIADRM_64
+11383b1 sm6250-common: Don't build textclassifier
+98250d5 sm6250-common: media : copy c2 google codecs to vendor/etc
+95c0e60 sm6250-common: Enforce vendor tree presence
+ae5681a sm6250-common: Kill deprecated TARGET_USES_MKE2FS
+1433fe4 sm6250-common: Use TARGET_COPY_OUT_SYSTEM
+582b2e8 sm6250-common: Set TARGET_SCREEN_DENSITY to 400
+d7b6d37 sm6250-common: Increase CPU Boost duration to 200ms
+281efbb README: Add Pro Max image
+74c243b README: Add information about the device
+4efd879 sm6250-common: update-sha1sums.py: Adapt to SM6250 tree
+97f76ed sdm660-common: update-sha1sums: Handle line with opts
+e76716f sdm660-common: update-sha1sums: Better handle line breaks
+0d83ed8 sdm660-common: Format update-sha1sums.py with yapf
+4bf6fe4 sdm660-common: Add unpinning support to update-sha1sums.py script
+258aeee sdm660-common: Handle moved blobs in update-sha1sums.py script
+d9e359c sdm660-common: Add script to update sha1sums of kanged blobs
+
+====================
      04-22-2021
 ====================
 
@@ -133,6 +157,9 @@ b990e9f sm6250-common: overlay: Enable Always on Display
 
    * kernel/xiaomi/sm6250
 02af1f53cd64 defconfig: Set LocalVersion as Xiaomi_SM6250
+
+   * tools/repohooks
+2163340 utils: run: fix crash with failing tools & combined stderr
 
 ====================
      04-21-2021
@@ -403,13 +430,4 @@ c32c968 addons: Update HideCutout
 
    * vendor/lineage
 a78bf547 crdroid: notch-city: Add 3 mode display cutout handler
-
-====================
-     04-13-2021
-====================
-
-   * frameworks/base
-5bbb01619ac1 LockSettingsService: Fix face removal when disabling security
-bd452e80acea PixelPropsUtils: Bump FP to Redfin April 2021
-a77d042c4907 PixelPropsUtils: Update packages
 
