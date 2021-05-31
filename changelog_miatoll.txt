@@ -3,6 +3,20 @@ Build type: Monthly
 Device: Redmi Note 9 Pro Series (miatoll)
 Device maintainer: Aditya Ramakrishnan
 
+===== 31 May, 2021 =====
+* Hide Magisk better
+* light: brightness scaling improvements
+* Enable IORap app launch prefetching
+* Switched to QTI Power HAL
+* Tweaked schedutil up/down rate limit
+* Enable power HAL interaction boosting
+* AIDL power stats
+* Import audio configs from LA.UM.9.1.r1-09600-SMxxx0.0
+* Modify vm_bms service group permissions
+* Bring WPSS out-of-reset on init
+* Remove com.qualcomm.qti.presenceappSub2 from whitelist
+* Kernel upstreamed to v4.14.234
+
 ===== 27 May, 2021 =====
 * Initial CrDroid 7.6 Code
 * Updated to May Security Patch
