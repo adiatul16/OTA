@@ -3,6 +3,19 @@ Build type: Monthly
 Device: Redmi Note 9 Pro Series (miatoll)
 Device maintainer: Aditya Ramakrishnan
 
+===== 28 June, 2021 =====
+* Initial CrDroid 7.7 Code
+* Updated to June Security Patch
+* Upstreamed kernel to v4.14.237
+* Updated blobs from LA.UM.9.1.r1-09600-SMxxx0.0
+* Import GPS from LA.UM.9.1.r1-10200-SMxxx0.0
+* lower background apps to 38
+* Support AliPay Fingerprint payment
+* Added Google Camera GO
+* Switched to AIDL Lights HAL
+* Added QTI Thermal HAL
+* And many more awesome changes
+
 ===== 31 May, 2021 =====
 * Hide Magisk better
 * light: brightness scaling improvements
