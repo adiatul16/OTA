@@ -3,6 +3,14 @@ Build type: Monthly
 Device: Redmi Note 9 Pro Series (miatoll)
 Device maintainer: Aditya Ramakrishnan
 
+===== 22 July, 2021 =====
+* Initial CrDroid 7.8 Code
+* Updated to July Sec Patch
+* Upstreamed kernel to v4.14.240
+* Fixed High Active Drain && High Idle Drain
+* Disable Interaction Boost
+* Updated blobs from excalibur
+
 ===== 28 June, 2021 =====
 * Initial CrDroid 7.7 Code
 * Updated to June Security Patch
