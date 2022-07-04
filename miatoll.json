@@ -1,24 +1,28 @@
 {
-	"response": [
-		{
-			"maintainer": "Aditya Ramakrishnan (Rusticoast348)",
-			"oem": "Redmi",
-			"device": "Redmi Note 9 Series (miatoll)",
-			"filename": "crDroidAndroid-11.0-20210722-miatoll-v7.8.zip",
-			"download": "https://sourceforge.net/projects/lavenderlair/files/miatoll/7.x/crDroidAndroid-11.0-20210722-miatoll-v7.8.zip/download",
-			"timestamp": 1626964786,
-			"md5": "6cab3583325df860ed0d99c564136d9d",
-			"size": 1844878756,
-			"version": "7.8",
-			"buildtype": "Monthly",
-			"forum": "https://forum.xda-developers.com/t/stable-android-11-crdroid-7-6-unofficial-miatoll.4283609/",
-			"gapps": "https://sourceforge.net/projects/nikgapps/files/Releases/NikGapps-R/",
-			"firmware": "",
-			"modem": "",
-			"bootloader": "",
-			"recovery": "https://files.orangefox.tech/OrangeFox-Beta/miatoll/OrangeFox-R11.0_1-Beta-miatoll.zip",
-			"paypal": "https://www.paypal.com/paypalme/AdityaRamakrishnan",
-			"telegram": "https://t.me/Rusticoast348"
-		}
-	]
+  "response": [
+    {
+        "maintainer": "Aditya Ramakrishnan (rusticoast348)",
+        "oem": "Redmi",
+        "device": "Redmi Note 9S Series",
+        "filename": "crDroidAndroid-12.1-20220704-miatoll-v8.6.zip",
+        "download": "https://sourceforge.net/projects/lavenderlair/files/miatoll/8.x/crDroidAndroid-12.1-20220704-miatoll-v8.6.zip/download",
+        "timestamp": 1656920680,
+        "md5": "83e7ed6e573db7001f7cd16100307f97",
+        "sha256": "db56553061cf0806d9fe18f8e9dea9960be90cde6f2945c8cde486fe5c9fa2c8",
+        "size": 1296543244,
+        "version": "8.6",
+        "buildtype": "Weekly",
+        "forum": "https://forum.xda-developers.com/t/rom-android-12-beta-miatoll-official-crdroid-v8-1-19-01-2022.4390623/",
+        "gapps": "",
+        "firmware": "",
+        "modem": "",
+        "bootloader": "",
+        "recovery": "https://dl.orangefox.download/60fbd820462e0f766bc300aa",
+        "paypal": "",
+        "telegram": "https://t.me/Rusticoast348",
+        "dt": "https://github.com/adiatul16/android_device_xiaomi_miatoll",
+        "common-dt": "https://github.com/adiatul16/android_device_xiaomi_sm6250-common",
+        "kernel": "https://github.com/ArrowOS-Devices/android_kernel_xiaomi_sm6250"
+    }
+  ]
 }

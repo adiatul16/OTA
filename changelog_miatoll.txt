@@ -3,54 +3,5 @@ Build type: Monthly
 Device: Redmi Note 9 Pro Series (miatoll)
 Device maintainer: Aditya Ramakrishnan
 
-===== 22 July, 2021 =====
-* Initial CrDroid 7.8 Code
-* Updated to July Sec Patch
-* Upstreamed kernel to v4.14.240
-* Fixed High Active Drain && High Idle Drain
-* Disable Interaction Boost
-* Updated blobs from excalibur
-
-===== 28 June, 2021 =====
-* Initial CrDroid 7.7 Code
-* Updated to June Security Patch
-* Upstreamed kernel to v4.14.237
-* Updated blobs from LA.UM.9.1.r1-09600-SMxxx0.0
-* Import GPS from LA.UM.9.1.r1-10200-SMxxx0.0
-* lower background apps to 38
-* Support AliPay Fingerprint payment
-* Added Google Camera GO
-* Switched to AIDL Lights HAL
-* Added QTI Thermal HAL
-* And many more awesome changes
-
-===== 31 May, 2021 =====
-* Hide Magisk better
-* light: brightness scaling improvements
-* Enable IORap app launch prefetching
-* Switched to QTI Power HAL
-* Tweaked schedutil up/down rate limit
-* Enable power HAL interaction boosting
-* AIDL power stats
-* Import audio configs from LA.UM.9.1.r1-09600-SMxxx0.0
-* Modify vm_bms service group permissions
-* Bring WPSS out-of-reset on init
-* Remove com.qualcomm.qti.presenceappSub2 from whitelist
-* Kernel upstreamed to v4.14.234
-
-===== 27 May, 2021 =====
-* Initial CrDroid 7.6 Code
-* Updated to May Security Patch
-* Prometheus Kernel v4.14.233
-* Tuned Vibration Pattern
-* Post-boot scripts optimisation
-* Switched to OSS Camera Provider
-* Removed Virtual Framebuffer
-* Tuned Perf configs for performance
-* Optimize native executables for Cortex-A76 CPU
-* Improved Deep Sleep
-* Updated blobs from qssi-user-11-RKQ1.200826.002-V12.0.1.7.RJWMIXM-release-keys
-* Updated Perf, PostProcessing and IOP blobs from qssi-user-11-RKQ1.200903.002-eng.root.20210203.003534-release-keys
-* And many more exciting changes
-
-
+===== 04 July, 2021 =====
+* Initial CrDroid v8.6 Update
