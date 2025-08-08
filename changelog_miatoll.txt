@@ -1,7 +1,0 @@
-Highlights & Device Specific Changes:
-Build type: Monthly
-Device: Redmi Note 9 Pro Series (miatoll)
-Device maintainer: Aditya Ramakrishnan
-
-===== 04 July, 2021 =====
-* Initial CrDroid v8.6 Update

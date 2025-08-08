@@ -1,0 +1,28 @@
+{
+    "response": [
+        {
+            "maintainer": "",
+            "oem": "",
+            "device": "",
+            "filename": "crDroidAndroid-15.0-20250809-martini-v11.7.zip",
+            "download": "https://sourceforge.net/projects/crdroid/files/martini/11.x/crDroidAndroid-15.0-20250809-martini-v11.7.zip/download",
+            "timestamp": 1754681123,
+            "md5": "4eb8b40c7f47daae471cca93cd74806a",
+            "sha256": "79d2979b819b78cf792366d7aa309bd48de3ccab23565c1b2f7e7e3aed965759",
+            "size": 1950563330,
+            "version": "11.7",
+            "buildtype": "",
+            "forum": "",
+            "gapps": "",
+            "firmware": "",
+            "modem": "",
+            "bootloader": "",
+            "recovery": "",
+            "paypal": "",
+            "telegram": "",
+            "dt": "",
+            "common-dt": "",
+            "kernel": ""
+        }
+    ]
+}
