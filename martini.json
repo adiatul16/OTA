@@ -1,9 +1,9 @@
 {
     "response": [
         {
-            "maintainer": "",
-            "oem": "",
-            "device": "",
+            "maintainer": "Aditya Ramakrishnan",
+            "oem": "OnePlus",
+            "device": "OnePlus 9RT",
             "filename": "crDroidAndroid-15.0-20250809-martini-v11.7.zip",
             "download": "https://sourceforge.net/projects/crdroid/files/martini/11.x/crDroidAndroid-15.0-20250809-martini-v11.7.zip/download",
             "timestamp": 1754681123,
@@ -11,18 +11,18 @@
             "sha256": "79d2979b819b78cf792366d7aa309bd48de3ccab23565c1b2f7e7e3aed965759",
             "size": 1950563330,
             "version": "11.7",
-            "buildtype": "",
+            "buildtype": "Beta",
             "forum": "",
-            "gapps": "",
+            "gapps": "https://sourceforge.net/projects/nikgapps/files/Elite-Releases/crdroid-official/Android-15/",
             "firmware": "",
             "modem": "",
             "bootloader": "",
-            "recovery": "",
+            "recovery": "https://sourceforge.net/projects/crdroid/files/hotdog/11.x/recovery/",
             "paypal": "",
-            "telegram": "",
-            "dt": "",
-            "common-dt": "",
-            "kernel": ""
+            "telegram": "https://t.me/Rusticoast348",
+            "dt": "https://github.com/adiatul16/android_device_oneplus_martini",
+            "common-dt": "https://github.com/adiatul16/android_device_oneplus_sm8350-common",
+            "kernel": "https://github.com/adiatul16/android_kernel_oneplus_sm8350"
         }
     ]
 }

@@ -1,0 +1,369 @@
+====================
+     08-09-2025
+====================
+
+   * device/oneplus/martini
+fbedb5f martini: Enable SurfaceFlinger's display power timer
+26da724 martini: overlay: Define proper dimensions for the power button
+fd0bdc2 martini: overlay: Rework statusbar paddings
+226ff0b martini: Fix keyguard text too close to FOD
+5c7e32d martini: Update punchole overlay for samsung ams662zs01
+
+   * device/oneplus/sm8350-common
+81e0272 sm8350-common: Set cpu "runtime variant" to kryo385 This makes bionic and various art tools that compile/runs cpu-specific code choose the kryo385 variant at runtime. It does not affect build-time compilation.
+30a574e sm8350-common: Use generic arch variant Follow blueline which has not demonstrated any regressions after switching to a generic arch variant.
+d7e415c sm8350-common: Do not balance msm_drm and kgsl_3d0 IRQs These are critical for display performance and should not be balanced in order to improve latency and responsiveness.
+71b7349 sm8350-common: copy task_profiles from system/core The reason Qualcomm maintains their own copy of task_profiles for lahaina is that API 30 does not support UClamp. However, the current task_profiles for API 31 and higher does support UClamp. Qualcomm's modifications such as I/O CGroups and audio CPUSet are already integrated in the CLO system/core task_profiles, so we can use that instead of maintaining our own.
+ba8c089 sm8350-common: Disable audio fluence for voicecall - Fixes low mic issue on whatsapp calls
+9299fc6 sm8350-common: Disable per-cgroup PSI accounting Per-cgroup PSI accounting is not used in Android while having small performance cost. Disable this unused feature.
+8cf07b3 sm8350-common: init: Configure schedutil up/down rate limit This modifies the rate limits for the governor so that frequencies ramp up fairly quickly but take a bit longer to decrease. In order to save power, big and prime clusters have higher up rate limits and lower down rate limits.
+680a110 sm8350-common: Use foreground uclamp for hwcomposer Matches SF, makes sure rendering always has enough capacity.
+bfd3128 sm8350-common: Use foreground cpuset/uclamp for gralloc Makes sure rendering has enough capacity.
+decaf1c sm8350-common: Adjust thread count and cpuset after setup wizard Test: check dex2oat settings Bug: 150665820
+846a115 sm8350-common: init: Do not allow restricted tasks to run on big cores The restricted cpuset is for system tasks that are throttled because the screen is off. Google only runs these tasks on the little cluster to save power and we will follow suit.
+31f95e1 sm8350-common: Switch hwcomposer to foreground CPU set  * Greatly affects the performance/latency of the display    considering you have foreground set to 0-6 cores on <SM7350    whilst being power efficient.
+998be1e sm8350-common: init: Avoid migrating foreground tasks to X1
+c03ba20 sm8350-common: Move background cpuset to CPU0-1x
+94f31b6 sm8350-common: Extend audio offload buffer size to 256kb Extend buffer size for offload playback to reduce the frequency of CPU wake up. It makes ADSP to process more data one time and reduce the number of times to wake up CPU.
+3433e45 sm8350-common: Enable compr_voip feature
+5a6096e sm8350-common: Build qti health AIDL for recovery
+f67f345 sm8350-common: init: QTI PowerHAL: Failed to acquire lock...
+346143a sm8350-common: Add keyboard padding props from stock Only for two specific keyboard apps though...
+2a7303b sm8350-common: Disable FRP * This should really be disabled after unlocking the bootloader.
+b999bcb sm8350-common: overlay: Allow VoLTE and VoWiFi by default  * Otherwise causes issues with Airtel.  * Also comment out other AOSPA changes committed.
+
+   * kernel/oneplus/sm8350
+c5eb39d8d59c2 power: oplus: sm8350: Fetch cycle_count from oplus_gauge_get_batt_cc() By default charger_cycle returns 5, Fetch correct value from oplus_gauge_get_batt_cc()
+1960a8191c661 power: oplus: sm8350: Set appropriate variable for charge_full_design This fixes the issue where the current full capacity is set instead of full design capacity on /sys/class/power_supply/battery/charge_full_design which in-turn is used to evaluate battery health.
+9bc4ecdfbf79b msm: kgsl: Increase worker thread priority Currently, the kgsl worker thread is erroneously ranked right below Android's audio threads in terms of priority.
+e5c4e4997b2ae arm64: configs: Don't sync when entering suspend
+472cc05d64413 arm64: configs: Disable ThinLTO for performance impact
+6b9b4ef0f607c arm64: configs: Disable shima and yupik configs
+7536274dc4d40 arm64: configs: Disable STM
+418e5dfdf97f0 arm64: configs: Disable SLUB per-CPU partial caches
+563928d464043 arm64: configs: disable CONFIG_IPC_LOGGING
+f75d3b617cea5 arm64: configs: disable CONFIG_SCHEDSTATS
+3a8d5d680417c arm64: configs: Disable qcom memory dump drivers
+fc12aa45dfbf7 arm64: configs: Disable EDAC
+663ffa95b5b18 arm64: configs: Don't enable SLUB_DEBUG
+c9c817958e0b0 arm64: dts: lahaina: Disable coresight for lahaina
+7d42bd541174a arm64: configs: Disable coresight
+33de2fa5d6a57 arm64: configs: Disable support for ARM64 SVE
+db5111c762adf arm64: configs: Disable PPR
+a1a5793ff3425 arm64: configs: Change UCLAMP_BUCKETS_COUNT to 20
+e222db885354d block: zram: Use lz4 as default zram compression
+c77c56358358e f2fs: reduce timeout for uncongestion
+5975cca71bfeb f2fs: set ioprio of GC kthread to idle
+98c388f30549f techpack/dataipa: Conditionally enable ipa wakelocks
+617e05e50b353 msm_geni_serial: reduce wakelock timeout from ISR to 100ms
+c306cb921d551 oplus_chg: Report cycle count properly
+2c745932ae4b4 oplus_chg: Calculate time to empty battery
+827506be6ba55 cpufreq: cpu-boost: don't boost if input_boost_ms is <= 0
+154dcb3cfcb72 power: oplus_charger: Fix slow charge while screen is on
+c3b1fe61fdae3 techpack/display: Enforce ulps by default
+39ab4bc7347a6 techpack/display: Enforce ulps suspend
+7a45e90cbf1c8 arm64: configs: Go back to CONFIG_HZ_100
+682194bc4b528 power: process: Use lesser time to enter sleep Revise Panchajanya1999/msm-4.4@803b0f8
+
+   * packages/apps/Updater
+d019528 Updater: Point to custom OTA repo.
+
+   * vendor/oneplus/sm8350-common
+b7ef219 sm8350-common: Move it to common device tree.
+
+====================
+     08-08-2025
+====================
+
+   * device/oneplus/martini
+ffeb879 martini: Add device details of Oneplus 9RT
+
+   * device/oneplus/sm8350-common
+844b9e5 sm8350-common: Relax refresh rate timers
+47c0700 sm8350-common: Drop wvmkiller
+b40bc5f overlay: Add restart SystemUI in Advanced Reboot
+681942a sm8350-common: init: Enable fastchg_fw_update and ui_soc_decimal on boot
+208db19 sm8350-common: init: Start audio rpc daemon early to improve performance
+8ceff33 sm8350-common: prop: Update adm value to 12 to fix sound cracking
+f3b7d8f sm8350-common: init: Allow all filesystems for USB-OTG
+a48fab8 sm8350-common: Drop zygote critical window
+fdc5f45 sm8350-common: Remove legacy/vendor ril-daemon rules
+fa2fd6f sm8350-common: Import /sys/kernel/oplus_display/*
+950329e sm8350-common: fstab: Up zram device to 6GB This is ideal for devices with 8GB of RAM or higher.
+cbe2e60 sm8350-common: props: Set debug.sf.auto_latch_unsignaled to 0
+989227e sm8350-common: props: Remove debug.sf.disable_client_composition_cache 1
+cb83db2 sm8350-common: Remove IO read_ahead_kb tune
+1792a1e sm8350-common: Disable display refresh rate override
+32de523 sm8350-common: Disable backpressure prop
+98b9c53 sm8350-common: Don't report memcg functionality in cmdline
+b7d96e6 sm8350-common: Enable frame pacing for smoother visual performance
+451e11d sm8350-common: Remove Force triple frame buffers
+8a597ef sm8350-common: Enable freeform windows Signed-off-by: Pranav Vashi <neobuddy89@gmail.com> Change-Id: I90d117dfbcc3b0cc759d7bdc193d307ba9022d03 Signed-off-by: mukesh22584 <mks22584@gmail.com> (cherry picked from commit 2e455b66dde97448192d56c0f556bfbab59e2bbf) Signed-off-by: TogoFire <togofire@mailfence.com> Signed-off-by: adiatul16 <adiatul16@gmail.com>
+703da44 sm8350-common: Use scudo instead of jemalloc for a memory allocator
+f2c4f8b sm8350-common: prop: Disable IMS debugging
+dcb9e34 sm8350-common: init: Give proper permissions for /dev/diag
+1f2b8ed sm8350-common: init: Disable QCOM system daemon
+7e7b1a0 sm8350-common: init: Remove unnecessary QTI logkit directories
+2c59ff8 sm8350-common: init: Disable cnss_diag service
+888da73 sm8350-common: ueventd: Set hidraw node to 0660 system system
+3b7e760 sm8350-common: overlay: Don't pin camera & launcher app in memory
+2f0fca3 sm8350-common: overlay: Update pinner list Based on AOSPA/android_vendor_aospa@c33cdcb
+05cdaaf sm8350-common: Disable logging sensors-hal events
+e057130 sm8350-common: DeviceSettings: move to system
+eb8e5b7 sm8350-common: Build gralloc.qcom
+d55e8d8 sm8350-common: audio: Drop audio haptics playback support
+df7c74b sm8150-common: set adb debugging props for now
+096fbdc sm8350-common: update pinner service files after merging pixel_fw
+09a7a04 sm8350-common: remove smart pixels support
+8ee63f3 sm8350-common: add alert slider overlays
+af0d4eb sm8350-common: DeviceSettings: apply system settings style
+cdb8b8a sm8350-common: update reserved space
+9c958b9 sm8350-common: import DeviceSettings
+8be404c sm8350-common: drop modules that are no longer built
+b9f0b34 sm8350-common: enable smart pixels
+b227fc2 sm8350-common: overlay: Mock LinearmotorVibratorService
+405cf48 sm8350-common: Tune schedutil parameters
+9ab364a sm8350-common: Retrict cpuset for non-critical groups
+6a99986 sm8350-common: init: Reset readahead values for 128 always
+62d5483 sm8350-common: init: Disable multiple kswapd threads
+d654720 sm8350-common: init: Set task min colocation threshold
+53a7d97 sm8350-common: init: Always use lz4 for zram
+bc488f9 sm8350-common: init: Revert few CAF changes
+88174ba sm8350-common: Move few kernel scripts to device tree
+f2e991f sm8350-common: overlay: Turn on screen on unplug
+e137f44 sm8350-common: Decouple auto-suspend and interactive state from display
+a70a89d sm8350-common: overlay: Enable ambient display notifications by default
+ae8b388 sm8350-common: overlay: Optimized auto brightness adjustment
+abd607f sm8350-common: Switch to crdroid doze
+4fc6f6c sm8350-common: Nuke OnePlus doze
+dbc7837 sm8350-common: Enable screen off udpfs support
+f3a95fd sm8350-common: overlay: Set preferred refresh rate on keyguard to 60
+9d477a5 sm8350-common: overlay: Only allow 5G SA on Jio
+e05a769 sm8350-common: overlay: enable 5G SA and NSA
+4980bae sm8350-common: Enable burn in protection
+0d05cbb sm8350-common: overlay: set warp charging overlays
+925eb11 sm8350-common: Fix lockscreen charging info
+d5eb9f4 sm8350-common: overlay: Use appropriate charging thresholds
+9f859ea sm8350-common: set divider for CPU info overlay
+d59d8bb sm8350-common: add FPS overlay
+8af2574 sm8350-common: Enable UDFPS icons and animations
+1dd965b sm8350-common: set armv8-2a as TARGET_2ND_ARCH_VARIANT
+802e41f sm8350-common: Migrate QTI power HAL to soong_config_set
+
+   * kernel/oneplus/sm8350
+84751b3c11426 arm64: configs: Disable Qualcomm Thermal Limiter From commit 2d1a86cab8ef (drivers: thermal: limits-dcvs: Always build driver), we can gain better CPU performance safely without thermal being a sensitive bitch.
+c1db42898f6f3 media: media-device: silence log spam
+58bc45c0c0e13 drivers: scsi: ufs: Disable clock scaling
+0f2cce8334480 Makefile: move LDFINAL out GCC guards
+5d97d8405b0b7 dtbo.img: build device tree overlay partition image
+386676c1ba914 arm64/xor: use EOR3 instructions when available
+c7954d56d3513 arm64: vdso: Use GFP_KERNEL for allocating compat vdso and signal pages
+a42ac7b45fb1b arm64: vdso: Remove redundant calls to flush_dcache_page()
+5826226b22881 arm64: vdso32: add CONFIG_THUMB2_COMPAT_VDSO
+a4da5fbb1b14f fs: ntfs3: Remove bitmap_size function
+facde84c15718 fs: ntfs3: apply backport compatibility 5.4.y
+9001b8e850a13 fs: ntfs3: register filesystem as "ntfs" & "ntfs3" both
+4bdf5c2fb0277 fs: ntfs3: apply backport compatibility 5.10.y
+758b6784a3297 fs: ntfs3: import from 5.15.156
+04fe436690c21 kbuild: link lib-y objects to vmlinux forcibly when CONFIG_MODULES=y
+9109bf18228bb Kbuild, lto: Add Link Time Optimization support
+fb3dbe7ad0279 Makefile: move LDFINAL out GCC guards
+715ca356c82b5 arm64/vdso: Disable LTO completely
+b38475b977e54 techpack: camera: Nuke unused OIS source
+93e182df8846d techpack: camera: Fix misleading indentation warning
+3a00984fbc249 techpack: camera: LC898124: Widen DataPM/DataDM to uint64_t.
+46b791b40ba15 treewide: remove remaining _no_log() usage
+b7d18c2030fc6 techpack: camera: Revert "msm: camera: ife: Add ife num outport bound checks"
+50bb8891821d1 techpack/camera: disable general-regs relying on fpu ois calculation
+fcc41fcd0d98f techpack: additional build fixes
+17980fbcb0abf msm: camera: Stub out the camera_debug_util API and compile it out
+a39fe23c93e36 msm: camera: Remove nonsensical register reads in cam_vfe_fe_reg_dump()
+e8ab00ba50467 msm: camera: Fix memory leak in cam_res_mgr_probe()
+0cb8a70f980a2 treewide: Address clang-17 build warnings
+f35068a47d2c9 techpack: camera: Import changes from OOS
+0843aeec2beee cnss2: Add unused function guard
+4c75e3a858fd1 arm64: configs: Disable DEBUG_STACK_USAGE and DEBUG_MEMORY_INIT
+5b1420e5e7baf arm64: configs: Enable UFS Host Performance Booster support
+3b8aa3518d832 arm64: configs: Set QRTR wake timeout to 500ms
+8f3ee91710093 arm64: configs: Use 58 ms as GPU idle timeout
+5ac4c7f7a5e0e arm64: configs: Increase contiguous area size to 20MB
+3639ecb221685 arm64: configs: Disable config cleancache
+e64322214dcd8 arm64: configs: Disable SPLIT_RSS_COUNTING since HAVE_USERSPACE_LOW_MEMORY_KILLER enabled
+46e466d99c1fa lahaina-qgki_defconfig: Disable Download mode.
+f6ddb71287725 Revert "PCI/PM: Observe reset delay irrespective of bridge_d3"
+843072c679671 Revert "arm64: remove redundant FRAME_POINTER kconfig option and force to select it"
+b3ade425bec5b Revert "msm: kgsl: Call dma_buf_unmap_attachment() early"
+43eb20134b36e tty/serial/8250/Kconfig: Disable 8250 serial port driver by default
+547d8bf08fa19 arch: arm64: dts: lahaina: Switch to step_wise thermal governor
+eebab3364c95b techpack: display: Make dimlayer transparent in LP1/LP2 power mode
+205a1f861e4ff techpack: display: Don't skip LP1 cmd for AoD with fingerprint_mode on
+23bd16fea14df techpack: display: oplus: Set AoD low light mode as default
+c08ca3deb4adf techpack: display: sde: Specify sync probe for sde_wb
+0ccf3d62b22f7 disp: msm: sde: move some frame_events from crtc commit to event thread
+d38d917da7714 disp: msm: sde: add input handler unregister check before encoder wakeup
+755f2a5fbdaa2 drm/msm/sde: Don't clear dim layers when there aren't any applied
+59aef3c7dddef drm/msm/sde: Don't read and clear VBIF errors upon commit
+bb35ea7a5ec07 drm/msm/sde: Remove redundant write memory barriers from IRQ routines
+abe3aca200e82 drm/msm/sde: Consolidate IRQ status reads into IRQ dispatcher
+2f937e5f96904 drm/msm/sde: Don't allocate memory dynamically for CRTC atomic check
+887c56ebe419c drm/msm/sde: Skip heavy autorefresh checks when it's not enabled
+08aa679528925 drm/msm/sde: use kmem_cache pool for struct sde_fence
+7e428421cd744 arm64: configs: Enable CC_OPTIMIZE_FOR_PERFORMANCE_O3
+4beb9c07231f2 Kbuild: Implement Lahaina specific optimization
+9b7a1db37a1bd lahaina-qgki_defconfig: Enable LLVM Polly optimizations
+4d22c288251fe Makefile: Set --lto-O3 LLD linker flag with clang LTO
+77a7b46a36131 Makefile: Use O3 optimization level for Clang LTO
+6a0075e41ecc3 ANDROID: kbuild: fix ld_flags missing for LTO
+64ae4c4b004d6 techpack/video: msm: vidc: Disable debug logs
+254214fa5c3bf techpack/video: msm_vidc: Silence opening/closing video instance logspam
+343e3e29421fe techpack: display: Silence massive dsi_cmd logspam
+7dcc845c46d40 drivers: oplus_touchscreen_v2: Silence annoying logspam
+4e0abd040fc0c cpuidle: lpm-levels: Remove debug event logging
+73d17d288a514 techpack: display: Disable debug logging macros
+16b19837aa915 techpack: display: Disable debug configs
+31d88baf16d9c techpack: display: dsi: Remove massive DSI dmesg logspam
+6c81ab2a86350 techpack: display: sde: do not pass around offset string
+3f4ed564646b3 drm/msm/sde: Remove register write debug logging
+712c0bcbd39d7 techpack: display: Add some bp hints to hot paths
+43b2415cb247c fs: default to noatime
+b53d23e845cdc lahaina-qgki_defconfig: Enable dead code elimination
+ee32da21641c9 kernel/sched: Import power efficiency feature
+d471d45be3472 ASoC: lsm: Do not create any wakeup_source for keyword detection
+af87e42d58f04 power_supply: don't allocate attrname
+78c35b02e809d oplus_chg: fix function declaration
+d92c96933d314 oplus_chg_comm.c: fix code error
+7d09a795714dd net/bluetooth: Queue delayed work on power efficient wq
+0df02e319213a techpack/dataipa: Run delayed work on power efficient workqueues
+9ef01aa4b4cb5 drivers/qca-wifi-host-cmn: Run delayed work on power efficient wq
+e6fd11b4abb1f arm64: Inline the spin lock function family
+d650b5ae44859 arm64: fix spelling mistake "ca not" -> "cannot"
+6b8d6e0e1574d qcacld-3.0: Do not allow any wakelocks to be held
+c54e11ba50fad drivers: scsi: ufs-qcom: set auto hibern8 back to 1ms
+ef75674b55a22 arch/arm64/dts: lahaina: Optimize the energy model
+0e725c9683efa cpufreq: schedutil: restore cached freq when next_f is not changed
+58efcd68e2cf0 sched/fair: Optimize select_idle_core()
+d7ccab281d473 sched/fair: Define sched_idle_cpu() only for SMP configurations
+c6d18ed5542ae sched/fair: Load balance aggressively for SCHED_IDLE CPUs
+c243c80b1a3aa sched/fair: Make sched-idle CPU selection consistent throughout
+06d7ce6b027b5 disp: msm: sde: update idle_pc_duration based on frame rate
+24cc6fc683a65 disp: msm: sde: shorter idle-pc duration in doze mode
+f84e83b807715 drm/msm/sde: Remove unneeded PM QoS requests
+6637b6a8ae8a1 disp: msm: sde: wait for pending vsync event on pm_suspend
+e1a0cc59be32e techpack/audio: resolve various warnings
+3781d57e66030 cpufreq: cpu-boost: set interval between consecutive boosts to be at least the duration of the boost instead of a bigger value
+2f1fd387fc9c3 workqueue: change permissions to allow root control of wq_power_efficient toggle
+d9b65c5503072 dtc: quiet
+bc5323e18c6ef kernel: alarmtimer: Relax wakelock
+3fe80562dbd4f arm64: lemonadep: Enable edge limit support
+3aa36ca8ce947 aw8697: Add haptic level adjustment
+e8b8614934b77 oplus_chg: charger: Implement usb2 fast charge mode
+f8b4bc6189c8b drivers: gpu: Force GPU idle timeout to 58 ms
+9513f27a6805d arm64: configs: Fix NR_CPUS derp in defconfig
+
+   * tools/extract-utils
+b166df5 extract_utils: sort only groups of blobs
+
+   * vendor/oneplus/sm8350-common
+fba16ae sm8350-common: Move kernel scripts to DT
+
+====================
+     08-07-2025
+====================
+
+====================
+     08-06-2025
+====================
+
+   * frameworks/base
+9f4edfe5ebff Stop dreaming if global button is a wake key
+1d350bc18801 Fixed NPE in orientationRespectedWithInsets
+4505c1547b39 Fix NPE problem in notifyReparentedSurfaces
+8f06b7d28b3a audio: fix incorrect preferred device.
+
+   * packages/services/Telecomm
+7fda1c7b3 Can not answer incoming call as video state when accept by headsetMediaButton
+
+====================
+     08-05-2025
+====================
+
+   * device/qcom/sepolicy_vndr/legacy-um
+d94d104a8 sepolicy: holi: Label pmr735a power supply nodes
+
+====================
+     08-04-2025
+====================
+
+   * frameworks/av
+5f45675058 Audio: fix the null pointer crash issue caused by accessing destroyed output
+
+====================
+     08-03-2025
+====================
+
+   * packages/apps/Aperture
+7f948a8 Automatic translation import
+
+   * packages/apps/Catapult
+47bb118 Automatic translation import
+
+   * packages/apps/Etar
+d312f415 Automatic translation import
+
+   * packages/apps/FMRadio
+0823949 Automatic translation import
+
+   * packages/apps/FlipFlap
+638533e Automatic translation import
+
+   * packages/apps/Glimpse
+01654bb Automatic translation import
+
+   * packages/apps/Jelly
+aad4d12 Automatic translation import
+
+   * packages/apps/Recorder
+0c8bad3 Automatic translation import
+
+   * packages/apps/Twelve
+397c8ca Automatic translation import
+8b48e37 Twelve: Fix typo in string name
+
+   * packages/providers/DownloadProvider
+723daf60 Automatic translation import
+
+   * packages/resources/devicesettings
+85e6e4a Automatic translation import
+
+   * vendor/crowdin
+ddd8d75 Automatic translation import
+
+   * vendor/qcom/opensource/commonsys/fm
+6f3546e Automatic translation import
+
+====================
+     08-02-2025
+====================
+
+   * vendor/addons
+2bd58161 addons: Update themed icons
+
+====================
+     08-01-2025
+====================
+
+   * hardware/qcom-caf/sm8750/display/core
+100ac95 Revert "Revert^2 "sdm: add support for DS merge mode""
+
+====================
+     07-31-2025
+====================
+
+   * hardware/qcom-caf/msm8953/display
+6cfaebba9d sdm: Remove VIDEO_MODE_DEFER_RETIRE_FENCE ifdef
+
+   * hardware/qcom-caf/sdm660/display
+dfcc000065 sdm: Remove VIDEO_MODE_DEFER_RETIRE_FENCE ifdef
+
+   * hardware/qcom-caf/sm8750/display/core
+557a72d display-core: Make IsGPUHWAvailable() non-virtual and force it to true
